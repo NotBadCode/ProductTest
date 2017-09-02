@@ -34,7 +34,7 @@ class TypeCategoryAdminController extends Controller
                             'delete',
                         ],
                         'allow'   => true,
-                        'roles'   => [$roles['manager']],
+                        'roles'   => [$roles['admin']],
                     ],
                 ],
             ],

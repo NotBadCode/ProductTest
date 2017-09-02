@@ -6,7 +6,6 @@ use app\models\ProductSearch;
 use kartik\grid\EditableColumnAction;
 use Yii;
 use app\models\Product;
-use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -38,7 +37,7 @@ class ProductAdminController extends Controller
                             'ajax-update'
                         ],
                         'allow'   => true,
-                        'roles'   => [$roles['manager']],
+                        'roles'   => [$roles['admin']],
                     ],
                 ],
             ],

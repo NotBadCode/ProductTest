@@ -34,7 +34,7 @@ class TypeAdminController extends Controller
                             'delete',
                         ],
                         'allow'   => true,
-                        'roles'   => [$roles['manager']],
+                        'roles'   => [$roles['admin']],
                     ],
                 ],
             ],
