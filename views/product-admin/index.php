@@ -76,6 +76,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                      'width'               => '25%',
                                  ],
                                  [
+                                     'attribute' => 'count',
+                                 ],
+                                 [
                                      'attribute' => 'producer',
                                  ],
                                  [
@@ -127,8 +130,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                          'pluginOptions' => ['allowClear' => true],
                                      ],
                                  ],
-                                 'create_time',
-                                 'update_time',
                                  [
                                      'class'    => 'yii\grid\ActionColumn',
                                      'template' => '{update} {delete}',

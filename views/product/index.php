@@ -64,6 +64,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                      'width'               => '25%',
                                  ],
                                  [
+                                     'attribute' => 'count',
+                                 ],
+                                 [
                                      'attribute' => 'producer',
                                  ],
                                  [
