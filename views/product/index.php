@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
-use yii\helpers\Url;
 use app\models\Type;
 use app\models\TypeCategory;
 
@@ -87,6 +86,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                  ],
                                  [
                                      'attribute' => 'price',
+                                     'value'     => function ($model) {
+                                         return Yii::$app->formatter->asCurrency($model->price);
+                                     },
                                      'width'     => '15%',
                                  ],
                              ],

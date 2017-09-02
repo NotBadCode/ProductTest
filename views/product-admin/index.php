@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                          ],
                                          'pluginOptions' => ['allowClear' => true],
                                      ],
-                                     'width'               => '25%',
+                                     'width'               => '20%',
                                  ],
                                  [
                                      'attribute'           => 'category_id',
@@ -73,7 +73,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                          ],
                                          'pluginOptions' => ['allowClear' => true],
                                      ],
-                                     'width'               => '25%',
+                                     'width'               => '20%',
                                  ],
                                  [
                                      'attribute' => 'count',
@@ -99,6 +99,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                  ],
                                  [
                                      'attribute' => 'price',
+                                     'value'     => function ($model) {
+                                         return Yii::$app->formatter->asCurrency($model->price);
+                                     },
                                      'width'     => '15%',
                                  ],
                                  [
@@ -128,7 +131,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                              'placeholder' => Yii::t('app', 'Select a status ...')
                                          ],
                                          'pluginOptions' => ['allowClear' => true],
-                                     ],
+                                     ]
                                  ],
                                  [
                                      'class'    => 'yii\grid\ActionColumn',

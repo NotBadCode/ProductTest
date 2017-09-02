@@ -39,6 +39,12 @@ $config = [
                 ],
             ],
         ],
+        'formatter'    => [
+            'dateFormat'             => 'dd.MM.yyyy',
+            'decimalSeparator'       => ',',
+            'thousandSeparator'      => ' ',
+            'currencyCode'           => '',
+        ],
         'cache'        => [
             'class' => 'yii\caching\FileCache',
         ],
