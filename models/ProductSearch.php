@@ -69,8 +69,8 @@ class ProductSearch extends Product
                                        'create_time',
                                        'update_time',
                                        'category_id' => [
-                                           'asc'   => ['type.category_id' => SORT_ASC],
-                                           'desc'  => ['type.category_id' => SORT_DESC],
+                                           'asc'  => ['type.category_id' => SORT_ASC],
+                                           'desc' => ['type.category_id' => SORT_DESC],
                                        ],
                                    ],
                                ]);
@@ -83,9 +83,10 @@ class ProductSearch extends Product
         $query->joinWith('type');
 
         if ($this->produce_date) {
-            $dateTime           = new \DateTime($this->produce_date);
-            $this->produce_date = $dateTime->format('Y-m-d');
+            $dateTime = new \DateTime($this->produce_date);
+            $query->andFilterWhere(['produce_date' => $dateTime->format('Y-m-d')]);
         }
+
 
         $query->andFilterWhere([
                                    'id'               => $this->id,
@@ -93,12 +94,17 @@ class ProductSearch extends Product
                                    'count'            => $this->count,
                                    'type_id'          => $this->type_id,
                                    'type.category_id' => $this->category_id,
-                                   'produce_date'     => $this->produce_date,
                                ]);
 
         $query->andFilterWhere(['like', 'producer', $this->producer]);
         $query->andFilterWhere(['like', 'price', $this->price]);
 
         return $dataProvider;
+    }
+
+
+    public function getProduceDate()
+    {
+        return $this->produce_date . '12';
     }
 }
