@@ -101,10 +101,4 @@ class ProductSearch extends Product
 
         return $dataProvider;
     }
-
-
-    public function getProduceDate()
-    {
-        return $this->produce_date . '12';
-    }
 }
